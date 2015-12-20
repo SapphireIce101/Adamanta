@@ -1,0 +1,23 @@
+BEGIN J_ADA
+
+IF ~Global("J_AdaMeet","GLOBAL",1)~ THEN BEGIN a1
+SAY ~Look! People! Ooooo, you've got lots of shinie- I mean, could you perhaps use a talented healer?~
+++ ~Are we really going to take this- ... Whatever is with us?~ + a1.1
+++ ~No, I don't think we can use you right now.~ + a1.2
+++ ~I- ... Uhm- ... Sure, why not?~ + a1.3
+END
+
+IF ~~ a1.1
+SAY ~Bu-Bu- Shinies!~
+++ ~Oh, fine, I guess we have room.~ a1.3
+END
+
+IF ~~ a1.2
+SAY ~I- ... Well- ... MOOOOOM! Can I raid their camp tonight?~
+IF ~~ DO ~EscapeArea()~ EXIT
+END
+
+IF ~~ a1.3
+SAY ~Yay! I promise not to run off with all of your loot! I mean- ... Praise Brandobaris, may his light make us whole, praaaiiise!~
+IF ~~ DO ~SetGlobal("J_Adajoined","GLOBAL",1) JoinParty()~ EXIT
+END
