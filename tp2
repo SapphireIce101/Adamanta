@@ -1,0 +1,90 @@
+BACKUP ~Adamanta/Backup~
+
+AUTHOR ~SapphireIce101 and Alaaran~
+
+VERSION ~0~
+
+README ~Adamanta/Readme-Adamanta.txt~
+
+AUTO_TRA ~Adamanta/%s~
+
+LANGUAGE ~English~ ~English~ ~Adamanta/English/Setup-Adamanta.tra~
+
+BEGIN ~Adamanta BGEE Mod~
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+COPY ~Adamanta/Audio~ ~override~
+
+COPY ~Adamanta/Characters/J_Ada.cre~ ~override/J_Ada.cre~
+SAY NAME1 ~Adamanta~
+SAY NAME2 ~Adamanta~
+SAY INITIAL_MEETING ~By the sneaky-sneak of Brandobaris!~
+SAY MORALE ~By the great sneaky Mouse! Flee! Flee!~
+SAY HAPPY ~Thanks for your coinpu-...I mean, Yay!~
+SAY UNHAPPY_ANNOYED ~I told you we should have taken the rest of the Shopkeep's goods!~
+SAY UNHAPPY_SERIOUS ~It's the guard! Game over, man! GAME OVER!~
+SAY UNHAPPY_BREAKING ~Report me to the Guard again, and I'm dropping you like a bad hairball.~
+SAY LEADER ~Follow me boys, we'll have every diamond in the city! We'll stop-...Evil, or something?~
+SAY TIRED ~Go on- ... Go- ... Go on without me, just leave- ... All the gold, and my beer.~
+SAY BORED ~Sing, sing, singing a song, singy-singy-singy-singy, singing all day long!~
+SAY BATTLE_CRY1 ~Bow to the power of Stab!~
+SAY BATTLE_CRY2 ~Quick! Hop on my shoulders to reach the eyes!~
+SAY BATTLE_CRY3 ~Oh my Brandobaris! Oh my Brandobaris! DODGE! DODGE THAT!~
+SAY BATTLE_CRY4 ~Well, I always have had a thing for short me- Focus, Adamanta, Focus! Stab things for Brandobaris!~
+SAY BATTLE_CRY5 ~Less violence, more drink! LESS VIOLENCE! AAAIIEE!!~
+SAY DAMAGE ~Eep! My fleshy bits!~
+SAY DYING ~ALL OF MY FLESHY BITS! ALL OF THEM!!~
+SAY HURT ~I think I broke a nai- Oh wait, that's blood. NOT A NAIL! NOT A NAIL!~
+SAY AREA_FOREST ~Dark- ... Spooky- ... Perfect for sneaky-sneak!~
+SAY AREA_CITY ~So many people- ... So many pockets! WHICH ONE FIRST?!~
+SAY AREA_DUNGEON ~I don't like this- ... Can we go back to Picky-Pocket City?~
+SAY AREA_DAY ~Reminds me of home, but people are too tall, and skinny, and- ... What was I talking about again?~
+SAY AREA_NIGHT ~Muuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuch better. COW NOISES!~
+SAY SELECT_COMMON1 ~Poke?~
+SAY SELECT_COMMON2 ~Pokepokepo- This is getting really old.~
+SAY SELECT_COMMON3 ~Poke me again and I'm taking your liver.~
+SAY SELECT_COMMON4 ~LIVER TIME!~
+SAY SELECT_COMMON5 ~Oh, a monkey! Heehee, I didn't actually see one, that's just a funny word, Monkey!~
+SAY SELECT_COMMON6 ~Suuuuddenly! I'm half the Orc I used to be!~
+SAY SELECT_ACTION1 ~Chugga Chugga Choo Choo!~
+SAY SELECT_ACTION2 ~Sometimes, at night, I nibble on my Bedroll and pretend it's your foot.~
+SAY SELECT_ACTION3 ~Did I just say that? I just said that.~
+SAY SELECT_ACTION4 ~Brandobaris Praise Us!- ... What? I -am- a Cleric.~
+SAY SELECT_ACTION5 ~Gitchie Gitchie Goo means that I love you! It's a sacred part of our holy text.~
+SAY SELECT_ACTION6 ~Soooooooomeeewheeeeere over the rainbow, saaaataaaaan flies! Sooooooooomeeewheeeeere over the rainbow, everything that you love dies.~
+SAY SELECT_RARE1 ~Let's give them all our money!~
+SAY SELECT_RARE2 ~Look! A handsome Elf!~
+SAY CRITICAL_HIT ~Oh my Brandobaris! I'm so sorry! I missed your coinpurse! Lemme try again!~
+SAY CRITICAL_MISS ~I got it! Quick check for coins!~
+SAY TARGET_IMMUNE ~Did I get it? I can't tell. No? Phooey!~
+SAY INVENTORY_FULL ~So ... Much ... Loot ... I love my life!~
+SAY SPELL_DISRUPTED ~My Brandobaris! My spell!~
+SAY BIO ~Adamanta was found, orphaned, outside of Gullykin where some halflings found her, and took her in as their own. As a youth, Adamanta tried to copy her halfling siblings, and friends by sneaking around and doing other things. However, she was always kind of big, so she ended up helping her siblings, and friends, by lifting them up to windows and such. Now, since she's older, she can sneak around and make her friends and family proud.~
+WRITE_ASCII 0x248 ~J_AdaS~ #8
+WRITE_ASCII 0x2cc ~J_Ada~  #8 
+WRITE_ASCII 0x280 ~J_Ada~  #32
+WRITE_ASCII 0X34  ~J_ADAS~ #8 
+WRITE_ASCII 0x3c  ~J_ADAM~ #8
+
+COMPILE ~Adamanta/Dialogue/J_BAda.d~
+		~Adamanta/Dialogue/J_Ada.d~
+		~Adamanta/Dialogue/J_AdaJ.d~ 
+		~Adamanta/Dialogue/J_AdaP.d~ 
+		
+		~Adamanta/Scripts/J_AdaS.baf~
+		~Adamanta/Scripts/J_AdaD.baf~
+		~Adamanta/Scripts/J_AdaF.baf~
+
+EXTEND_TOP ~AR4003.bcs~ ~Adamanta/Scripts/AR4003.baf~
+
+ACTION_IF GAME_IS ~BGEE~ BEGIN
+COMPILE	~Adamanta/Dialogue/AdaEE.d~
+END
+
+APPEND ~pdialog.2da~ ~J_Ada J_AdaP J_AdaJ J_AdaD~
+  UNLESS ~J_Ada~
+
+APPEND ~interdia.2da~ ~J_Ada J_BAda~
+  UNLESS ~J_Ada~
