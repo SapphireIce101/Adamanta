@@ -1,0 +1,10 @@
+// Spawning Adamanta
+
+IF
+Global("J_AdaSpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("J_Ada",[497,338],3)
+SetGlobal("J_AdaSpawn","GLOBAL",1)
+Continue()
+END
