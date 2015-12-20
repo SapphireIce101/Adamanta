@@ -1,0 +1,33 @@
+BEGIN J_AdaP
+
+IF ~Global("J_AdaMeet","GLOBAL",1)~ a2
+SAY ~I- ... I what? You're leaving me? But I lov- No, no, Mama always said to keep it up inside. *Breathe, breathe, deep breath*~
+++ ~For the last time, we're not pulling a scam on the Grand Poobah.~ + a2.1
+++ ~If I get caught with you on this, it's over.~ + a2.2
+END
+
+IF ~~ a2.1
+SAY ~Aaawww, but he called you a Ninny-Goober! Well- ... Fine! I'll just do it myself, now, which way was Calimshan- ...~
+IF ~~ DO ~SetGlobal("J_AdaMeet","GLOBAL",0) EscapeAreaMove("AR4003",497,338,3)~ EXIT
+END
+
+IF ~~ a2.2
+SAY ~No no no, no caughtsies! We won't get caughtsied! Yeeessss- ...~
+IF ~~ DO ~JoinParty()~ EXIT
+END
+
+IF ~Global("J_AdaMeet","GLOBAL",0)~ a2.3
+SAY ~You! You're the ones who nearly got me eaten by Rutterkin! Don't give me that look! YOU KNOW WHAT YOU DI- Can I come with you again?~
+++ ~Yeah, no.~ + a2.4
+++ ~Eh, what the hells. Why not?~ + a2.5
+END 
+
+IF ~~ a2.4
+SAY ~Whaaaaaaaaaaat? Well, okay.~
+IF ~~ EXIT
+END
+
+IF ~~ a2.5
+SAY ~Whoo! This time -I- get to feed you to the massive Kill-Beast!~
+IF ~~ DO ~SetGlobal("J_AdaMeet","GLOBAL",1) JoinParty()~ EXIT
+END
