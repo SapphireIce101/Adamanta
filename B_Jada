@@ -1,0 +1,175 @@
+BEGIN J_BAda
+
+// Ajantis
+
+CHAIN
+IF ~InParty("Ajantis")
+See("Ajantis")
+!StateCheck("Ajantis", CD_STATE_NOTVALID)
+!StateCheck("J_Ada", CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaAjantis1_BG1","GLOBAL",0)~ THEN J_BADA J_AdaAjantis1
+~Ajantis! Janty-Jan! What's Helm like? Whaaaaaaat?~
+DO ~SetGlobal("J_AdaAjantis_BG1","GLOBAL",1)~
+== %AJANTIS_BANTER% ~Well, you see, Helm is-~
+== J_BADA ~Does he give you Shinies if you serve him well? Does he even care about Shinies?~
+== %AJANTIS_BANTER% ~I don't- ... I'm not sure what Helm's standpoint on 'Shinies' is.~
+END
+
+CHAIN
+IF ~InParty("Ajantis")
+See("Ajantis")
+!StateCheck("Ajantis", CD_STATE_NOTVALID)
+!StateCheck("J_Ada", CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaAjantis2_BG1","GLOBAL",0)~ THEN J_BADA J_AdaAjantis2
+~Janty-Jan!~
+DO ~SetGlobal("J_AdaAjantis2_BG1","GLOBAL",1)~
+== %AJANTIS_BANTER% ~Yes, Adamanta?~
+== B_JADA ~You're a Paladin, right?~
+== %AJANTIS_BANTER% ~Yes, Adamanta~
+== B_JADA ~Does that mean you have to kiss a pretty lady of she gives you her handkerchief?~
+== %AJANTIS_BANTER% ~I don't- ... No. I don't think so, Helm is the God of Justice, Battle, Protection of the Inno-~
+== B_JADA ~Okie-Dokie! It isn't like I have a handkerchief anyways- ... And <CHARNAME> is way cuter than you.~
+END
+
+CHAIN
+IF ~InParty("J_Ada")
+See("J_Ada")
+!StateCheck("Ajantis", CD_STATE_NOTVALID)
+!StateCheck("J_Ada", CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaAjantis3_BG1","GLOBAL",0)~ THEN %AJANTIS_BANTER% J_AdaAjantis3
+~So, Adamanta, you pray to Brandobaris?~
+DO ~SetGlobal("J_AdaAjantis3_BG1","GLOBAL",1)~
+== B_JADA ~Mhm! He's the god of shiny things! And making those shiny things yours!~
+== %AJANTIS_BANTER% ~Interesting- ... Have you ever met any Paladins of Brandobaris?~
+== B_JADA ~Pala-Whatsy?~
+== %AJANTIS_BANTER% ~A Paladin, like myself, or-~
+== B_JADA ~Oh! Nope! You aren't sneaky enough!~
+END
+
+// Alora
+
+
+// Branwen
+
+
+// Coran
+
+
+// Dynaheir
+
+
+// Edwin
+
+
+// Eldoth
+
+
+// Faldorn
+
+
+// Garrick
+
+
+// Imoen
+
+
+// Jaheira
+
+
+// Kagain
+
+
+// Khalid
+
+
+// Kivan
+
+
+// Minsc
+
+CHAIN
+IF ~InParty("J_Ada")
+See("J_Ada")
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+!StateCheck("J_Ada",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaMinsc1_BG1","GLOBAL",0)~ THEN %MINSC_BANTER% J_AdaMinsc1
+~Onwards for great JUSTICE!~
+DO ~SetGlobal("J_AdaMinsc1_BG1","GLOBAL",1)~
+== J_BADA ~Onwards for great SHINIES!~
+== %MINSC_BANTER% ~Justice!~
+== J_BADA ~Shinies!~
+== %MINSC_BANTER% ~Shiny Justice!~
+== J_BADA ~SHINY JUSTIIIIIICE!~
+END
+
+CHAIN
+IF ~InParty("Minsc")
+See("Minsc")
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+!StateCheck("J_Ada",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaMinsc2_BG1","GLOBAL",0)~ THEN J_BADA J_AdaMinsc2
+~"By Brandobaris' wrinkly toenail! Is that a pygmy giant void Hamster? Look at you! You're so cute?~
+DO ~SetGlobal("J_AdaMinsc2_BG1","GLOBAL",1)~
+== %MINSC_BANTER% ~What?! Boo is not cute, he is an instrument of Justice!~
+== J_BADA ~Is he a Trombone? He's a very cute Trombone.~
+== %MINSC_BANTER% ~Ah, well yes, Boo is a rather cute warrior for Freedom. Aren't you, Boo?~
+END
+
+CHAIN
+IF ~InParty("Minsc")
+See("Minsc")
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+!StateCheck("J_Ada",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaMinsc3_BG1","GLOBAL",0)~ THEN J_BADA J_AdaMinsc3
+~C'mere Boo!~
+DO ~SetGlobal("J_AdaMinsc3_BG1","GLOBAL",1)~
+== %MINSC_BANTER% ~Adamanta! What are you doing?~
+== B_JADA ~Uhm- ... Nothing? Totally-not-using-Boo's-cuteness-to-distract-a-villain.~
+== %MINSC_BANTER% ~"A Villain? ATTAAAAAAACK!"~
+== B_JADA ~Wait! Minscy-Poo! The villain is the other way!~
+END
+
+// Montaron
+
+// Quayle
+
+// Safana
+
+// Shar-Teel
+
+CHAIN
+IF ~InParty("J_Ada")
+See("J_Ada")
+!StateCheck("J_Ada")
+!StateCheck("Sharteel")
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaSharteel1_BG1","GLOBAL",0)~ THEN %SHARTEEL_BANTER% J_AdaSharteel1
+~Curse you woman! Must you constantly let these Males -save- you?! Stand up for yourself!~
+DO ~SetGlobal("J_AdaSharteel1_BG1","GLOBAL",1)~
+== B_JADA ~What do you mean, Sharee?~
+== %SHARTEEL_BANTER% ~I mean that you make us all look WEAK when you let these Men fight for you!~
+== B_JADA ~But I am fighting! I throw rocks, and I heal you!~
+== %SHARTEEL_BANTER% ~You're a disgrace to our gender! You make us look like the weaker sex!~
+== B_JADA ~You aren't even listening to me, are you?~
+END
+
+// Skie
+
+// Tiax
+
+// Viconia
+
+// Xan
