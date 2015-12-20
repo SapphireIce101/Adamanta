@@ -1,0 +1,41 @@
+// Crossmod for BGEE
+
+//Dorn
+
+CHAIN
+IF ~InParty("Dorn")
+See("Dorn")
+!StateCheck("Dorn",CD_STATE_NOTVALID)
+!StateCheck("J_Ada",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaDorn1","GLOBAL",0)~ THEN J_JADAJ J_AdaDorn1
+~Dorny-Poo!~
+DO ~SetGlobal("J_AdaDorn1","GLOBAL",1)~
+== DORNJ ~Hrmm?~
+== B_JADA ~Why don't you trust us?~
+== DORNJ ~Because everyone is a backstabbing traitor.~
+== B_Jada ~But I'm not a traitor! See my biiiiiiig smile and my biiiiiiiiiiig arms ready to give you a biiiiiiiiiiiig hu- Hey! <CHARNAME> said no Stabbing Me with Rancor!~
+EXIT
+
+CHAIN
+IF ~InParty("J_Ada")
+See ("J_Ada")
+!StateCheck("J_Ada",CD_STATE_NOTVALID)
+!StateCheck("Dorn",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+Global("J_AdaDorn2","GLOBAL",0) ~ THEN DORNJ J_AdaDorn2
+~Cleric to the False Gods.~
+DO ~SetGlobal("J_AdaDorn2","GLOBAL",1)~
+== B_JADA ~Huh-wha- You mean me, Big Guy?~
+== DORNJ ~Greh- I'm the same size as you!~
+== B_JADA ~ Nuh-Uh! You're a Half-Orc! You're all big and scary!~
+== DORNJ ~You are a- No, I'm not even going to play this game with you, give me something to kill, <CHARNAME>, before I drain 'Bigtoes' as a sacrifice to Ur'Gothoz.~
+
+
+//Neera
+
+
+
+//Rasaad
